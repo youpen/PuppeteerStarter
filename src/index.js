@@ -3,8 +3,8 @@ const fs = require('fs');
 (
   async () => {
     const browser = await puppeteer.launch({
-      headless: true,
-      // slowMo: 10
+      headless: false,
+      slowMo: 10
     });
     let page = await browser.newPage();
     await page.goto('https://login.microsoftonline.com');
@@ -15,8 +15,8 @@ const fs = require('fs');
     await page.click('#idSIButton9');
     await page.waitForNavigation();
     await page.click('#idBtn_Back');
-    const newPage = await browser.newPage();
-    await newPage.goto("https://outlook.office365.com/owa/?realm=bindo.co&exsvurl=1&ll-cc=2052&modurl=0")
+    // const newPage = await browser.newPage();
+    await page.goto("https://outlook.office365.com/owa/?realm=bindo.co&exsvurl=1&ll-cc=2052&modurl=0");
     // await page.waitForNavigation();
     // await page.click('#ShellMail_link');
 
