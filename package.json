@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "aaa": "./src/aaa.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "aaa"
   },
   "repository": {
     "type": "git",
@@ -18,6 +21,8 @@
   },
   "homepage": "https://github.com/youpen/PuppeteerStarter#readme",
   "dependencies": {
-    "puppeteer": "^1.11.0"
+    "global": "^4.3.2",
+    "puppeteer": "^1.11.0",
+    "webpack": "^4.29.0"
   }
 }

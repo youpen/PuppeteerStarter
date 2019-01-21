@@ -2,7 +2,10 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 (
   async () => {
+    const width = 1440;
+    const height = 900;
     const browser = await puppeteer.launch({
+      'defaultViewport': {'width': width, 'height': height},
       headless: false,
       slowMo: 10
     });
@@ -29,7 +32,7 @@ const fs = require('fs');
     // console.log(ttt);
     // let bodyHTML = await page.evaluate(() => document.innerHTML);
     // const a = await page.$x("//div[@role=\"treeitem\" and @class=\"treeHeaderContainer\"]");
-    let primaryContainer = await page.evaluate(() => document.querySelector('.treeHeaderContainer'));
+    let primaryContainer = await page.evaluate(() => document.querySelector('.newNodeBtn o365button'));
     console.log(primaryContainer);
     // console.log('bbbb', a);
     // fs.writeFileSync('./outlook.html', bodyHTML)
